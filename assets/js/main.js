@@ -90,6 +90,12 @@
 					$('#titleBar, #navPanel, #page-wrapper')
 						.css('transition', 'none');
 
+
+		$('[data-sound-toggle]').click(function() {
+			window.toggleSound();
+			return false;
+		})
+
 	});
 
 })(jQuery);

@@ -43,25 +43,39 @@
 
   var play = (e) => {
     console.log('play');
-    osc1.start();
-    osc2.start();
-    osc3.start();
+    osc1.start(1);
+    osc2.start(1);
+    osc3.start(1);
     playing = true;
   };
 
-  var pause = (e) => {
-    console.log('pause');
+  var stop = (e) => {
+    console.log('stop');
     osc1.stop();
     osc2.stop();
     osc3.stop();
     playing = false;
   };
 
+  var pause = (e) => {
+    gain.gain.value = 0;
+    console.log('pause');
+    playing = false;
+  }
+
+  var resume = (e) => {
+    gain.gain.value = 1;
+    console.log('resume');
+    playing = true;
+  }
+
+
+
   window.toggleSound = (e) => {
     if (playing) {
       pause(e);
     } else {
-      play(e);
+      resume(e);
     }
   };
 

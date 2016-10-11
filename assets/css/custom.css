@@ -3,6 +3,10 @@
   max-width: 600px;
 }
 
+#header {
+	border-bottom: 0px;
+	box-shadow: none;
+}
 .banner-quote {
   color: #999;
   display: inherit;
@@ -17,4 +21,15 @@
 .sponsors a,
 .not-underlined {
   border-bottom: none;
+}
+
+.sound-toggle {
+	position: fixed;
+	left: 10px;
+	top: 10px;
+	z-index: 1000;
+}
+
+.sound-toggle a {
+	border-bottom: 0px;
 }
