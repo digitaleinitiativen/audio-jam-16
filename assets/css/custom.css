@@ -33,3 +33,12 @@
 .sound-toggle a {
 	border-bottom: 0px;
 }
+
+body {
+  background-color: white;
+}
+
+#page-wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
