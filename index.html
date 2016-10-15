@@ -13,6 +13,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/custom.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
   </head>
   <body class="no-sidebar">
     <div id="page-wrapper">
@@ -51,18 +52,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
                   Geräusche zu generieren. Deshalb organisiert die
                   <a href="http://www.digitaleinitiativen.at/" target="_blank">Plattform für digitale
                     Initiativen</a> einen so genannten <b>AudioJam</b>.
-                  <pre>
-                    <code>
-var audioCtx = new (window.AudioContext || window.webkitAudioContext);
-var sine = audioCtx.createOscillator();
-sine.start(); sine.connect(audioCtx.destination);
-                    </code>
-                  </pre>
+
+
                   In 9 Stunden ist jeder eingeladen, Geräusche zu machen. Es ist eigentlich
                   nichts vorgegeben, am Ende soll es mit Sound zu tun haben. Auch Boxen
                   bauen oder ein Musikstück komponieren ist möglich.<br/>
                 </p>
-                <h3>9 Stunden. Computer. Getränke. Essen. Sound. Lärm. Code. Fun. Fun. Fun.<h3>
+                <h3>9 Stunden. Computer. Getränke. Essen. Sound. Lärm. Code. Fun. Fun. Fun.</h3>
               </article>
             </div>
 
@@ -81,12 +77,19 @@ sine.start(); sine.connect(audioCtx.destination);
                   Mitbringen sollte man blendende Laune, einen frisch geduschten Körper, Laptop und Kopfhörer.
                 </p>
                 <h3>Setup Night</h3>
-                <p>
-                  Am <b>10. November</b> findet die traditionelle Setup Night statt, bei der wir jeden auf Schiene bringen. Sie wird um <b>19 Uhr</b> starten. Location wird noch bekannt gegeben. Wir werden die Javascript webaudio API unterstützen. 
-                </p>
-                <h3>Inauguration Meetup der Vorarlberger Soundsystem Culture</h3>
-                <p>
-                  Zwischen Setup Night und AudioJam am 11. November, quasi mit Faschingsbeginn und zur Einstimmung auf jede Menge Noise, findet das erste <a href="http://www.meetup.com/de-DE/sound-systems-vorarlberg/events/234495340/">Meetup der Vorarlberger Soundsystem Culture</a> statt.
+                <p>Am <b>10. November</b> findet die traditionelle Setup Night statt, bei der wir jeden auf Schiene bringen. Sie wird um <b>19 Uhr</b> starten. Location wird noch bekannt gegeben. Wir werden die <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">Javascript Web-Audio API</a> unterstützen.</p>
+                <p> Der tolle interaktive Sound dieser Website wurde mit der Web-Audio API umgesetzt. So einfach kann man den <a href="https://de.wikipedia.org/wiki/Kammerton">Kammerton A</a> (440Hz Sinus) programmieren:</p>
+                <pre><code>var audioCtx = new (window.AudioContext || window.webkitAudioContext);
+var sine = audioCtx.createOscillator();
+sine.frequency.value = 440;
+sine.connect(audioCtx.destination);
+sine.start();</code></pre>
+                <p><br /></p>
+                <h3>"Soundsystem Culture Vorarlberg" Meetup</h3>
+                <p>Zwischen Setup Night und AudioJam am <b>11. November</b>,
+                  quasi mit Faschingsbeginn und zur Einstimmung auf jede Menge Noise,
+                  findet das erste <a href="http://www.meetup.com/de-DE/sound-systems-vorarlberg/events/234495340/">Meetup der Vorarlberger Soundsystem Culture</a> statt.
+                  Es gibt einen Vortrag zum Thema <b>"The Physics of Sound"</b>.
               </article>
             </div>
 
@@ -200,6 +203,9 @@ sine.start(); sine.connect(audioCtx.destination);
     </div>
 
     <!-- Scripts -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/javascript.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
     <script src="assets/js/skel.min.js"></script>
